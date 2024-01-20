@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/styles/style.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <title>Pomodoro</title>
+</head>
+
+<body>
+    <div class="container mx-auto text-white-text select-none">
+        <header class="flex flex-col items-center justify-center my-6 md:my-16">
+            <h1 class="py-4 text-4xl font-bold title">pomodoro</h1>
+            <div class="flex-col py-2 font-semibold info center-element">
+                <div class="total-work center-element text-xs md:text-sm tracking-[0.2rem] md:tracking-[0.4rem]">
+                    <p class="">TOTAL WORK TIME: </p>
+                    <span class="py-4 ml-2 total-work-timing select-text">00:00:00 MIN</span>
+                </div>
+                <div class="next-session center-element text-xs tracking-[0.2rem] md:tracking-[0.4rem]">
+                    <p>NEXT SESSION: </p>
+                    <span class="ml-2 next-session-status text-light-blue">SHORT BREAK</span>
+                </div>
+            </div>
+        </header>
+        <section class="flex-col center-element">
+            <div
+                class="selecter w-full max-w-[310px] md:max-w-[400px] mx-2 py-3 px-2 flex justify-between bg-dark-blue rounded-full">
+                <div class="option">pomodoro</div>
+                <div class="option">short break</div> <!-- check class in main.css-->
+                <div class="option">long break</div> <!-- check class in main.css-->
+            </div>
+            <!-- <div class="flex-col p-8 text-center rounded-full timing-circle my-14 center-element bg-dark-blue aspect-square">
+                <div class="time text-[5rem] font-bold">
+                    <p>23:15</p>
+                </div>
+                <div class="resume-reset text-xs w-32 tracking-[10px] font-bold">
+                    <p class="my-4 resume">RESUME</p>
+                    <p class="reset ">RESET</p>
+                </div>
+            </div> -->
+            <div class="mt-10 timer">
+                <svg id="animated" viewbox="0 0 100 100">
+                    <circle class="fill-dark-blue" cx="50" cy="50" r="50" />
+                    <circle class="transition progress-ring__circle"
+                    stroke-width="3"
+                    stroke="#72F4F8"
+                    fill="transparent"
+                    r="45"
+                    cx="50"
+                    cy="50"/>
+                    <text class="circle-text counter" id="count" x="50" y="45" text-anchor="middle" dy="7" font-size="28">25:00</text>
+                    <text class="circle-text controle-btn pause-resume" id="count" x="50" y="60" text-anchor="middle" dy="7"></text>
+                    <text class="circle-text controle-btn start-reset" id="count" x="50" y="70" text-anchor="middle" dy="7">START</text>
+                </svg>
+            </div>
+        </section>
+    </div>
+    <script type="module" src="./public/script/main.js"></script>
+</body>
+
+</html>
