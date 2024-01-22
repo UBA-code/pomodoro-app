@@ -578,6 +578,26 @@ video {
   }
 }
 
+.invisible {
+  visibility: hidden;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -598,9 +618,18 @@ video {
   margin-bottom: 1rem;
 }
 
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 
 .ml-2 {
@@ -611,12 +640,20 @@ video {
   margin-top: 2.5rem;
 }
 
+.mt-\[5vh\] {
+  margin-top: 5vh;
+}
+
 .flex {
   display: flex;
 }
 
 .aspect-square {
   aspect-ratio: 1 / 1;
+}
+
+.h-\[100vh\] {
+  height: 100vh;
 }
 
 .w-32 {
@@ -629,6 +666,16 @@ video {
 
 .max-w-\[310px\] {
   max-width: 310px;
+}
+
+.scale-125 {
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .select-none {
@@ -647,6 +694,10 @@ video {
   flex-direction: column;
 }
 
+.items-start {
+  align-items: flex-start;
+}
+
 .items-center {
   align-items: center;
 }
@@ -659,8 +710,32 @@ video {
   justify-content: space-between;
 }
 
+.gap-3 {
+  gap: 0.75rem;
+}
+
 .rounded-full {
   border-radius: 9999px;
+}
+
+.bg-\[\#72F4F8\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(114 244 248 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#D882F8\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(216 130 248 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#F87272\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 114 114 / var(--tw-bg-opacity));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-dark-blue {
@@ -675,6 +750,10 @@ video {
 
 .fill-dark-blue {
   fill: #161932;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .p-8 {
@@ -703,6 +782,11 @@ video {
 
 .text-center {
   text-align: center;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-4xl {
@@ -735,6 +819,10 @@ video {
   letter-spacing: 10px;
 }
 
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+
 .text-light-blue {
   --tw-text-opacity: 1;
   color: rgb(114 244 248 / var(--tw-text-opacity));
@@ -745,12 +833,38 @@ video {
   color: rgb(214 223 255 / var(--tw-text-opacity));
 }
 
+.opacity-40 {
+  opacity: 0.4;
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
 }
 
 html {
@@ -816,7 +930,7 @@ svg {
   letter-spacing: .15rem;
 }
 
-.controle-btn {
+.counter-controle-btn {
   cursor: pointer;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -825,8 +939,181 @@ svg {
   transition-duration: 300ms;
 }
 
-.controle-btn:hover {
+.counter-controle-btn:hover {
   fill: #72F4F8;
+}
+
+.hide-setting-bg {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.setting-box {
+  position: absolute;
+  top: 4rem;
+  left: 3%;
+  z-index: 50;
+  width: 94%;
+  max-width: 800px;
+  border-radius: 1.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(22 25 50 / var(--tw-text-opacity));
+}
+
+@media (min-width: 640px) {
+  .setting-box {
+    top: 15vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .setting-box {
+    left: 50%;
+    --tw-translate-x: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+}
+
+@media screen and (max-width: 380px) and (max-height: 750px) {
+  .setting-box {
+    top: 1vh;
+  }
+}
+
+.setting-box .setting-body .little-title {
+  font-weight: 600;
+  letter-spacing: .18rem;
+}
+
+.setting-box .setting-body .time-fields-box .fields .field-box {
+  width: 100%;
+}
+
+.setting-box .setting-body .time-fields-box .fields .field-box .title {
+  margin-bottom: 0.5rem;
+  font-weight: 900;
+  --tw-text-opacity: 1;
+  color: rgb(204 205 212 / var(--tw-text-opacity));
+}
+
+.setting-box .setting-body .time-fields-box .fields .field-box .input-field-box .field-input {
+  width: 100%;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 241 250 / var(--tw-bg-opacity));
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .setting-box .setting-body .time-fields-box .fields .field-box .input-field-box .field-input {
+    padding: 1.25rem;
+    text-align: start;
+  }
+}
+
+.setting-box .setting-body .time-fields-box .fields .field-box .input-field-box {
+  position: relative;
+}
+
+.setting-box .setting-body .time-fields-box .fields .field-box .input-field-box .input-before img,
+.setting-box .setting-body .time-fields-box .fields .field-box .input-field-box .input-after img {
+  width: 1rem;
+  cursor: pointer;
+}
+
+.setting-box .setting-body .time-fields-box .fields .field-box .input-field-box .input-before {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 50;
+}
+
+.setting-box .setting-body .time-fields-box .fields .field-box .input-field-box .input-after {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 1rem;
+  z-index: 50;
+}
+
+.setting-box .setting-body .font-changer-box .font-buttons button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 241 250 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(155 157 175 / var(--tw-text-opacity));
+}
+
+.setting-box .setting-body .font-changer-box .font-buttons button,
+.setting-box .setting-body .color-changer-box .color-buttons button {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 2.25rem;
+  border-radius: 9999px;
+}
+
+@media (min-width: 768px) {
+  .setting-box .setting-body .font-changer-box .font-buttons button,
+.setting-box .setting-body .color-changer-box .color-buttons button {
+    width: 2.75rem;
+  }
+}
+
+.setting-box .setting-body .font-changer-box .font-buttons button:not(:first-child),
+.setting-box .setting-body .color-changer-box .color-buttons .color-btn:not(:first-child) {
+  margin-left: 0.25rem;
+}
+
+.setting-box .setting-body .font-changer-box .font-buttons button.active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 25 50 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.setting-box .setting-body .color-changer-box {
+  margin-bottom: 2rem;
+}
+
+.setting-box .setting-body .color-changer-box .color-buttons button::after {
+  content: url('../../src/assets/icon-check.svg');
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  --tw-translate-x: -50%;
+  --tw-translate-y: -50%;
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.setting-box .setting-body .color-changer-box .color-buttons button.active::after {
+  visibility: visible;
+}
+
+.setting-box .apply-btn {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(114 244 248 / var(--tw-bg-opacity));
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  font-weight: 700;
+}
+
+.hover\:opacity-80:hover {
+  opacity: 0.8;
 }
 
 @media (min-width: 768px) {
@@ -835,8 +1122,58 @@ svg {
     margin-bottom: 4rem;
   }
 
+  .md\:my-8 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .md\:mt-40 {
+    margin-top: 10rem;
+  }
+
+  .md\:mt-\[\] {
+    margin-top: ;
+  }
+
+  .md\:mt-\[10vh\] {
+    margin-top: 10vh;
+  }
+
   .md\:max-w-\[400px\] {
     max-width: 400px;
+  }
+
+  .md\:scale-\[1\.4\] {
+    --tw-scale-x: 1.4;
+    --tw-scale-y: 1.4;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:gap-6 {
+    gap: 1.5rem;
+  }
+
+  .md\:p-10 {
+    padding: 2.5rem;
+  }
+
+  .md\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .md\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .md\:text-sm {

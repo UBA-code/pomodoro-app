@@ -40,8 +40,8 @@
                     <p class="reset ">RESET</p>
                 </div>
             </div> -->
-            <div class="mt-10 timer">
-                <svg id="animated" viewbox="0 0 100 100">
+            <div class="mt-10 md:mt-40 timer">
+                <svg class="md:scale-[1.4]" id="animated" viewbox="0 0 100 100">
                     <circle class="fill-dark-blue" cx="50" cy="50" r="50" />
                     <circle class="transition progress-ring__circle"
                     stroke-width="3"
@@ -50,14 +50,78 @@
                     r="45"
                     cx="50"
                     cy="50"/>
-                    <text class="circle-text counter" id="count" x="50" y="45" text-anchor="middle" dy="7" font-size="28">25:00</text>
-                    <text class="circle-text controle-btn pause-resume" id="count" x="50" y="60" text-anchor="middle" dy="7"></text>
-                    <text class="circle-text controle-btn start-reset" id="count" x="50" y="70" text-anchor="middle" dy="7">START</text>
+                    <text class="circle-text counter text-3xl md:text-2xl" id="count" x="50" y="45" text-anchor="middle" dy="7">25:00</text>
+                    <text class="circle-text counter-controle-btn pause-resume" id="count" x="50" y="60" text-anchor="middle" dy="7"></text>
+                    <text class="circle-text counter-controle-btn start-reset" id="count" x="50" y="70" text-anchor="middle" dy="7">START</text>
                 </svg>
+            </div>
+            <div class="setting-btn mt-[5vh] md:mt-[10vh] cursor-pointer transition duration-300 hover:opacity-80">
+                <img src="./src/assets/icon-settings.svg" alt="setting icon">
             </div>
         </section>
     </div>
     <script type="module" src="./public/script/main.js"></script>
 </body>
+    <div class="setting-container transition duration-300 invisible opacity-0">
 
+        <div class="setting-bg fixed h-[100vh] w-full bg-black opacity-60 top-0 left-0 transition-all"></div> <!-- setting background -->
+
+        <div class="setting-box">
+            <div class="setting-head flex items-center justify-between p-6 md:p-10">
+                <p class="text-3xl font-semibold tracking-wider">Settings</p>
+                <img class="setting-close-btn scale-125 cursor-pointer" src="./src/assets/icon-close.svg" alt="">
+            </div>
+            <hr>
+            <div class="setting-body p-6 md:px-10 md:py-8">
+                <div class="time-fields-box">
+                    <p class="little-title mb-5">TIME (MINUTES)</p>
+                    <div class="fields flex gap-3 md:gap-6 justify-between items-start flex-col md:flex-row">
+                        <div class="field-box">
+                            <p class="title">pomodoro</p>
+                            <div class="input-field-box">
+                                <span class="input-before"><img src="./src/assets/icon-arrow-up.svg" alt=""></span>
+                                <input class="field-input" value="25"  type="text">
+                                <span class="input-after"><img src="./src/assets/icon-arrow-down.svg" alt=""></span>
+                            </div>
+                        </div>
+                        <div class="field-box">
+                            <p class="title">short break</p>
+                            <div class="input-field-box">
+                                <span class="input-before"><img src="./src/assets/icon-arrow-up.svg" alt=""></span>
+                                <input class="field-input" value="5"  type="text">
+                                <span class="input-after"><img src="./src/assets/icon-arrow-down.svg" alt=""></span>
+                            </div>
+                        </div>
+                        <div class="field-box">
+                            <p class="title">long break</p>
+                            <div class="input-field-box">
+                                <span class="input-before"><img src="./src/assets/icon-arrow-up.svg" alt=""></span>
+                                <input class="field-input" value="15"  type="text">
+                                <span class="input-after"><img src="./src/assets/icon-arrow-down.svg" alt=""></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-5">
+                <div class="font-changer-box flex justify-between items-center md:my-8">
+                    <p class="little-title">FONT</p>
+                    <div class="font-buttons">
+                        <button class="font-btn">Aa</button>
+                        <button class="font-btn">Aa</button>
+                        <button class="font-btn active">Aa</button>
+                    </div>
+                </div>
+                <hr class="my-5">
+                <div class="color-changer-box flex justify-between items-center md:my-8">
+                    <p class="little-title">COLOR</p>
+                    <div class="color-buttons">
+                        <button class="color-btn bg-[#F87272]" data-color="soft-red"></button>
+                        <button class="color-btn bg-[#72F4F8] active" data-color="soft-blue"></button>
+                        <button class="color-btn bg-[#D882F8]" data-color="soft-purple"></button>
+                    </div>
+                </div>
+            </div>
+            <button class="apply-btn">Apply</button>
+        </div>
+    </div>
 </html>

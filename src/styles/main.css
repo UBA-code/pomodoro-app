@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;400;600;800&family=Roboto+Slab:wght@200;400;700&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;400;600;800;900&family=Roboto+Slab:wght@200;400;700&family=Space+Mono:wght@400;700&display=swap');
 
 html {
     font-family: 'Kumbh Sans', sans-serif;
@@ -39,6 +39,89 @@ svg {
     @apply text-[0.3rem] tracking-[.15rem];
 }
 
-.controle-btn {
+.counter-controle-btn {
     @apply cursor-pointer transition duration-300 hover:fill-light-blue;
+}
+
+
+.hide-setting-bg {
+    @apply opacity-0 invisible;
+}
+
+.setting-box {
+    @apply absolute top-16 sm:top-[15vh] left-[3%] lg:left-[50%] lg:-translate-x-1/2 z-50
+        bg-white w-[94%] max-w-[800px] rounded-3xl  text-dark-blue;
+}
+
+@media screen and (max-width: 380px) and (max-height: 750px) {
+    .setting-box {
+        @apply top-[1vh];
+    }
+}
+.setting-box .setting-body .little-title {
+    @apply tracking-[.18rem] font-semibold;
+}
+
+.setting-box .setting-body .time-fields-box .fields .field-box {
+    @apply w-full;
+}
+
+.setting-box .setting-body .time-fields-box .fields .field-box .title{
+    @apply text-light-gray font-black mb-2;
+}
+
+.setting-box .setting-body .time-fields-box .fields .field-box .input-field-box .field-input{
+    @apply bg-[#EFF1FA] rounded-lg p-3 md:p-5 font-bold text-xl text-center md:text-start w-full;
+}
+
+.setting-box .setting-body .time-fields-box .fields .field-box .input-field-box {
+    @apply relative;
+}
+
+.setting-box .setting-body .time-fields-box .fields .field-box .input-field-box .input-before img,
+.setting-box .setting-body .time-fields-box .fields .field-box .input-field-box .input-after img{
+    @apply w-4 cursor-pointer;
+}
+
+.setting-box .setting-body .time-fields-box .fields .field-box .input-field-box .input-before {
+    @apply absolute z-50 top-4 right-4;
+}
+
+.setting-box .setting-body .time-fields-box .fields .field-box .input-field-box .input-after {
+    @apply absolute z-50 bottom-3 right-4;
+}
+
+.setting-box .setting-body .font-changer-box .font-buttons button{
+    @apply bg-[#EFF1FA] text-[#9B9DAF];
+}
+
+.setting-box .setting-body .font-changer-box .font-buttons button,
+.setting-box .setting-body .color-changer-box .color-buttons button {
+    @apply aspect-square w-9 md:w-11 rounded-full relative;
+}
+
+.setting-box .setting-body .font-changer-box .font-buttons button:not(:first-child),
+.setting-box .setting-body .color-changer-box .color-buttons .color-btn:not(:first-child){
+    @apply ml-1;
+}
+
+.setting-box .setting-body .font-changer-box .font-buttons button.active {
+    @apply bg-dark-blue text-white;
+}
+
+.setting-box .setting-body .color-changer-box {
+    @apply mb-8;
+}
+
+.setting-box .setting-body .color-changer-box .color-buttons button::after {
+    content: url('../../src/assets/icon-check.svg');
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-105 invisible;
+}
+
+.setting-box .setting-body .color-changer-box .color-buttons button.active::after {
+    @apply visible;
+}
+
+.setting-box .apply-btn {
+    @apply absolute -bottom-6 left-1/2 -translate-x-1/2 bg-light-blue py-4 px-12 rounded-full font-bold;
 }
