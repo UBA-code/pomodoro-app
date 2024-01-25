@@ -40,6 +40,14 @@ var defaultTiming;
     defaultTiming[defaultTiming["long"] = 15] = "long";
 })(defaultTiming || (defaultTiming = {}));
 ;
+{
+    let firstFont = document.querySelector('.font-changer-box .font-buttons .font-btn:first-child');
+    let secondFont = document.querySelector('.font-changer-box .font-buttons .font-btn:nth-child(2)');
+    let thirdFont = document.querySelector('.font-changer-box .font-buttons .font-btn:last-child');
+    firstFont.style.fontFamily = Fonts.kumh;
+    secondFont.style.fontFamily = Fonts.roboto;
+    thirdFont.style.fontFamily = Fonts.space;
+}
 //* setting show hide
 let settingBtn = document.querySelector(".setting-btn");
 let settingBox = document.querySelector(".setting-container");
@@ -50,7 +58,6 @@ settingBackground.addEventListener("click", toggleSetting);
 document.addEventListener("keyup", (e) => e.code === "Escape" ? toggleSetting() : "");
 closeSettingBtn.addEventListener("click", toggleSetting);
 function toggleSetting() {
-    // updateUI();
     if (settingBox.classList.contains("invisible")) {
         settingBox.classList.remove("invisible");
         setTimeout(() => settingBox.classList.remove("opacity-0"), 0);
@@ -115,7 +122,18 @@ function switchToActiveBtn(e, arr) {
     let fonts = document.querySelectorAll('.setting-body .font-changer-box .font-buttons .font-btn');
     let colors = document.querySelectorAll('.setting-body .color-changer-box .color-buttons .color-btn');
     //? check input values
-    inputs.forEach((e) => {
+    inputs.forEach((e, i) => {
+        let inputsController = document.querySelectorAll('.input-field-box');
+        inputsController.item(i).querySelector('.increase').addEventListener('mousedown', () => {
+            e.value = `${+(e.value) + 1}`;
+            if (+e.value > 90)
+                e.value = '90';
+        });
+        inputsController.item(i).querySelector('.decrease').addEventListener('mousedown', () => {
+            e.value = `${+(e.value) - 1}`;
+            if (+e.value < 1)
+                e.value = '1';
+        });
         e.addEventListener('input', _ => {
             let oldValue = "";
             for (let i = 0; i < e.value.length; i++) {

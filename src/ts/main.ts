@@ -55,6 +55,16 @@ interface storageObj {
 	sessionsTiming: { pomodoro: number; short: number; long: number },
 }
 
+{
+	let firstFont = document.querySelector('.font-changer-box .font-buttons .font-btn:first-child') as HTMLButtonElement;
+	let secondFont = document.querySelector('.font-changer-box .font-buttons .font-btn:nth-child(2)') as HTMLButtonElement;
+	let thirdFont = document.querySelector('.font-changer-box .font-buttons .font-btn:last-child') as HTMLButtonElement;
+
+	firstFont.style.fontFamily = Fonts.kumh;
+	secondFont.style.fontFamily = Fonts.roboto
+	thirdFont.style.fontFamily = Fonts.space;
+}
+
 //* setting show hide
 
 let settingBtn = document.querySelector(".setting-btn")!;
@@ -71,7 +81,6 @@ document.addEventListener("keyup", (e) =>
 closeSettingBtn.addEventListener("click", toggleSetting);
 
 function toggleSetting() {
-	// updateUI();
 	if (settingBox.classList.contains("invisible")) {
 		settingBox.classList.remove("invisible");
 		setTimeout(() => settingBox!.classList.remove("opacity-0"), 0);
@@ -149,7 +158,19 @@ function switchToActiveBtn(e: HTMLButtonElement, arr: NodeListOf<HTMLButtonEleme
 	let colors = document.querySelectorAll('.setting-body .color-changer-box .color-buttons .color-btn') as NodeListOf<HTMLButtonElement>;
 
 	//? check input values
-	inputs.forEach((e) => {
+	inputs.forEach((e, i) => {
+		let inputsController = document.querySelectorAll('.input-field-box')!;
+
+		inputsController.item(i).querySelector('.increase')!.addEventListener('mousedown', () => {
+			e.value = `${+(e.value) + 1}`
+			if (+e.value > 90)
+				e.value = '90';
+		});
+		inputsController.item(i).querySelector('.decrease')!.addEventListener('mousedown', () => {
+			e.value = `${+(e.value) - 1}`
+			if (+e.value < 1)
+				e.value = '1';
+		});
 		e.addEventListener('input', _ => {
 			let oldValue: string = "";
 			for (let i = 0; i < e.value.length; i++) {
@@ -226,7 +247,7 @@ function updateTotalTime(amountOfTime: number = 0) {
 	let totalTimeElement = document.querySelector('.total-work .total-work-timing')!;
 	let time: Date;
 
-	updateData({...mainObj, totalTime: mainObj.totalTime + amountOfTime});
+	updateData({ ...mainObj, totalTime: mainObj.totalTime + amountOfTime });
 	time = new Date(mainObj.totalTime);
 
 	let hours = time.getHours() < 10 ? '0' + time.getHours().toString() : time.getHours();
