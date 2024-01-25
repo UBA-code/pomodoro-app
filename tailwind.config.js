@@ -7,9 +7,11 @@ module.exports = {
         'html': '#1E213E',
         'white-text': '#D6DFFF',
         'dark-blue': '#161932',
-        'light-blue': '#72F4F8',
         'light-gray': '#CCCDD4',
       },
+	  transitionDuration: {
+		'Default': '9000ms',
+	  }
     },
   },
   plugins: [],

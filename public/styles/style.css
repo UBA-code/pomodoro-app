@@ -594,10 +594,6 @@ video {
   top: 0px;
 }
 
-.z-50 {
-  z-index: 50;
-}
-
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -664,8 +660,8 @@ video {
   width: 100%;
 }
 
-.max-w-\[310px\] {
-  max-width: 310px;
+.max-w-\[350px\] {
+  max-width: 350px;
 }
 
 .scale-125 {
@@ -752,6 +748,10 @@ video {
   fill: #161932;
 }
 
+.p-3 {
+  padding: 0.75rem;
+}
+
 .p-6 {
   padding: 1.5rem;
 }
@@ -794,6 +794,10 @@ video {
   line-height: 2.5rem;
 }
 
+.text-\[1\.6rem\] {
+  font-size: 1.6rem;
+}
+
 .text-\[5rem\] {
   font-size: 5rem;
 }
@@ -823,30 +827,17 @@ video {
   letter-spacing: 0.05em;
 }
 
-.text-light-blue {
-  --tw-text-opacity: 1;
-  color: rgb(114 244 248 / var(--tw-text-opacity));
-}
-
 .text-white-text {
   --tw-text-opacity: 1;
   color: rgb(214 223 255 / var(--tw-text-opacity));
-}
-
-.opacity-40 {
-  opacity: 0.4;
-}
-
-.opacity-60 {
-  opacity: 0.6;
 }
 
 .opacity-0 {
   opacity: 0;
 }
 
-.opacity-100 {
-  opacity: 1;
+.opacity-60 {
+  opacity: 0.6;
 }
 
 .transition {
@@ -867,10 +858,13 @@ video {
   transition-duration: 300ms;
 }
 
-html {
-  font-family: 'Kumbh Sans', sans-serif;
-  /* font-family: 'Roboto Slab', serif; */
-  /* font-family: 'Space Mono', monospace; */
+:root {
+  --color-theme: '';
+  --font-theme: '';
+}
+
+body {
+  font-family: var(--font-theme);
 }
 
 .center-element {
@@ -880,8 +874,7 @@ html {
 }
 
 .active-option {
-  --tw-bg-opacity: 1;
-  background-color: rgb(114 244 248 / var(--tw-bg-opacity));
+  background-color: var(--color-theme);
   --tw-text-opacity: 1;
   color: rgb(22 25 50 / var(--tw-text-opacity));
 }
@@ -925,9 +918,17 @@ svg {
   fill: #D6DFFF;
 }
 
+.progress-ring__circle {
+  stroke: var(--color-theme);
+}
+
 .circle-text:not(.counter) {
   font-size: 0.3rem;
   letter-spacing: .15rem;
+}
+
+.light-blue-text {
+  color: var(--color-theme);
 }
 
 .counter-controle-btn {
@@ -940,7 +941,7 @@ svg {
 }
 
 .counter-controle-btn:hover {
-  fill: #72F4F8;
+  fill: var(--color-theme);
 }
 
 .hide-setting-bg {
@@ -1054,6 +1055,17 @@ svg {
   aspect-ratio: 1 / 1;
   width: 2.25rem;
   border-radius: 9999px;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.setting-box .setting-body .font-changer-box .font-buttons button:hover,
+.setting-box .setting-body .color-changer-box .color-buttons button:hover {
+  --tw-brightness: brightness(.9);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 @media (min-width: 768px) {
@@ -1099,17 +1111,76 @@ svg {
 .setting-box .apply-btn {
   position: absolute;
   bottom: -1.5rem;
-  left: 50%;
+  left: 70%;
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  border-radius: 9999px;
+  background-color: var(--color-theme);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  font-weight: 700;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.setting-box .apply-btn:hover {
+  --tw-brightness: brightness(.9);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+@media (min-width: 768px) {
+  .setting-box .apply-btn {
+    left: 60%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.setting-box .reset-btn {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 30%;
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   border-radius: 9999px;
   --tw-bg-opacity: 1;
-  background-color: rgb(114 244 248 / var(--tw-bg-opacity));
+  background-color: rgb(255 183 3 / var(--tw-bg-opacity));
   padding-top: 1rem;
   padding-bottom: 1rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
   font-weight: 700;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.setting-box .reset-btn:hover {
+  --tw-brightness: brightness(.9);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+@media (min-width: 768px) {
+  .setting-box .reset-btn {
+    left: 40%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.smoth-transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
 }
 
 .hover\:opacity-80:hover {
@@ -1131,16 +1202,12 @@ svg {
     margin-top: 10rem;
   }
 
-  .md\:mt-\[\] {
-    margin-top: ;
-  }
-
   .md\:mt-\[10vh\] {
     margin-top: 10vh;
   }
 
-  .md\:max-w-\[400px\] {
-    max-width: 400px;
+  .md\:max-w-\[430px\] {
+    max-width: 430px;
   }
 
   .md\:scale-\[1\.4\] {

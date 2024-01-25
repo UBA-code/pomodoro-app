@@ -4,19 +4,22 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;400;600;800;900&family=Roboto+Slab:wght@200;400;700&family=Space+Mono:wght@400;700&display=swap');
 
-html {
-    font-family: 'Kumbh Sans', sans-serif;
-    /* font-family: 'Roboto Slab', serif; */
-    /* font-family: 'Space Mono', monospace; */
+
+:root {
+	--color-theme: '';
+	--font-theme: '';
 }
 
+body {
+    font-family: var(--font-theme);
+}
 
 .center-element {
     @apply flex items-center justify-center;
 }
 
 .active-option {
-    @apply  bg-light-blue text-dark-blue;
+    @apply  bg-[var(--color-theme)] text-dark-blue;
 }
 
 .option {
@@ -35,12 +38,20 @@ svg {
     @apply fill-white-text;
 }
 
+.progress-ring__circle {
+	stroke: var(--color-theme);
+}
+
 .circle-text:not(.counter) {
     @apply text-[0.3rem] tracking-[.15rem];
 }
 
+.light-blue-text {
+	color: var(--color-theme);
+}
+
 .counter-controle-btn {
-    @apply cursor-pointer transition duration-300 hover:fill-light-blue;
+    @apply cursor-pointer smoth-transition hover:fill-[var(--color-theme)];
 }
 
 
@@ -97,11 +108,11 @@ svg {
 
 .setting-box .setting-body .font-changer-box .font-buttons button,
 .setting-box .setting-body .color-changer-box .color-buttons button {
-    @apply aspect-square w-9 md:w-11 rounded-full relative;
+    @apply aspect-square w-9 md:w-11 rounded-full relative smoth-transition hover:brightness-90;
 }
 
 .setting-box .setting-body .font-changer-box .font-buttons button:not(:first-child),
-.setting-box .setting-body .color-changer-box .color-buttons .color-btn:not(:first-child){
+.setting-box .setting-body .color-changer-box .color-buttons .color-btn:not(:first-child) {
     @apply ml-1;
 }
 
@@ -123,5 +134,13 @@ svg {
 }
 
 .setting-box .apply-btn {
-    @apply absolute -bottom-6 left-1/2 -translate-x-1/2 bg-light-blue py-4 px-12 rounded-full font-bold;
+    @apply absolute -bottom-6 left-[70%] md:left-[60%] -translate-x-1/2 bg-[var(--color-theme)] hover:brightness-90 py-4 px-7 md:px-12 rounded-full font-bold smoth-transition;
+}
+
+.setting-box .reset-btn {
+    @apply absolute -bottom-6 left-[30%] md:left-[40%] -translate-x-1/2 bg-[#ffb703] hover:brightness-90 py-4 px-7 md:px-12 rounded-full font-bold smoth-transition;
+}
+
+.smoth-transition {
+	@apply transition duration-300;
 }
